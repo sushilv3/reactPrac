@@ -19,16 +19,31 @@ const IncNum = () =>{
   //  console.log('clicked ', count++);
 };
 
+let currentTime = new Date().toLocaleTimeString();
+
+const [curTime,setCtime] = useState(currentTime);
+
+const UpdateTime = ()=>{
+  currentTime = new Date().toLocaleTimeString();
+  setCtime(currentTime);
+};
   return (
    <>
    <Heading />
+
    <Para />
+
    <List />
+
    <Greeting />
 
+   <h1>Increament Counter</h1>
    <h1> {count} </h1>
-
    <button onClick={IncNum}> Click Me</button>
+
+   <h1>Digial Clock</h1>
+   <h1 >{curTime}</h1>
+   <button onClick={UpdateTime}>Get TIme</button>
 
    
    </>
