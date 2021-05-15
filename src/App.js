@@ -35,6 +35,28 @@ const UpdateTime1 = ()=>{
 };
 
 setInterval(UpdateTime1,1000);
+
+  const purple = "#8e44ad";
+  const [bg,setBg]=useState(purple);
+
+  const [btnText,setBtnText] = useState("Click Me");
+
+const bgChange = ()=>{
+  console.log("bgChange called" );
+
+  let newBd = "#34495e";
+  setBg(newBd);
+
+  let btnNewText = "ooohhhooo";
+  setBtnText(btnNewText);
+  
+};
+
+const  bgBack = ()=>{
+  setBg(purple);
+  setBtnText("oooofffffoooo!!!!");
+};
+
   return (
    <>
    <Heading />
@@ -56,6 +78,15 @@ setInterval(UpdateTime1,1000);
    <h1>Live Digial Clock</h1>
    <h1>{curTime1}</h1>
 
+   <div className="event" style={{background: bg}}>
+   <h1 className="event_heading">Click Event Handling</h1>
+      <button onClick={bgChange}  onDoubleClick={bgBack} className="event_btn"> {btnText}  </button>
+   </div>
+
+   <div className="event" style={{background: bg}}>
+   <h1 className="event_heading">Mouse Event Handling</h1>
+        <button onMouseEnter={bgChange}  onMouseLeave={bgBack} className="event_btn"> {btnText}  </button>
+   </div>
    </>
   );
 }
