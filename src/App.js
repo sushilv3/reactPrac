@@ -27,6 +27,14 @@ const UpdateTime = ()=>{
   currentTime = new Date().toLocaleTimeString();
   setCtime(currentTime);
 };
+
+const [curTime1,setCtime1] = useState(currentTime);
+const UpdateTime1 = ()=>{
+  currentTime = new Date().toLocaleTimeString();
+  setCtime1(currentTime);
+};
+
+setInterval(UpdateTime1,1000);
   return (
    <>
    <Heading />
@@ -45,7 +53,9 @@ const UpdateTime = ()=>{
    <h1 >{curTime}</h1>
    <button onClick={UpdateTime}>Get TIme</button>
 
-   
+   <h1>Live Digial Clock</h1>
+   <h1>{curTime1}</h1>
+
    </>
   );
 }
