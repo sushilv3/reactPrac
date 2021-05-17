@@ -1,14 +1,19 @@
-import React, { useState } from 'react';
+import React, { createContext, useState } from 'react';
 
 import Heading from './Heading';
 import Para from './Para';
 import List from './List';
 import Greeting from './Greeting';
+import ComponentA from './contextapi/ComponentA'
 
-
-
+  //create context
+  const FirstName = createContext();
+  const LastName = createContext();
 
 const App = ()=> {
+
+
+  
 
 const state = useState();
 
@@ -87,8 +92,26 @@ const  bgBack = ()=>{
    <h1 className="event_heading">Mouse Event Handling</h1>
         <button onMouseEnter={bgChange}  onMouseLeave={bgBack} className="event_btn"> {btnText}  </button>
    </div>
+
+
+    <hr />
+    <br />
+        <h1>Context Api</h1>    
+
+        {/**context provide and pass value and takes component*/}
+          <FirstName.Provider value={"Sushil"}> 
+            <LastName.Provider value={"verma"}>
+               <ComponentA /> 
+            </LastName.Provider>
+          </FirstName.Provider>
+          
+    <br />
+    <hr />
+
+
    </>
   );
 }
 
 export default App;
+export {FirstName, LastName};
