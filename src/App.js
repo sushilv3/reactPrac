@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 
 import Heading from './Heading';
 import Para from './Para';
@@ -12,8 +12,14 @@ import ComponentA from './contextapi/ComponentA'
 
 const App = ()=> {
 
+//this useState used in useEffect hook
+const [num, setNum] = useState(0);
 
-  
+//useEffect expect function
+useEffect(()=>{
+  alert('i m clicked');
+},[num]);
+
 
 const state = useState();
 
@@ -108,6 +114,10 @@ const  bgBack = ()=>{
     <br />
     <hr />
 
+    <hr />
+    <br />
+        <h1>useEffect hook</h1>  
+        <button onClick={()=>{setNum(num+1);}}>click me {num}</button>
 
    </>
   );
