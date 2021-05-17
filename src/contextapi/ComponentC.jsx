@@ -5,7 +5,7 @@ const ComponentC = ()=>{
     
 return(
 <>
-
+{/**consumer accepted function */}
  <FirstName.Consumer>
   {(fname)=>{
 
